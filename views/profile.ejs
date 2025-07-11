@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile</title>
+  <link rel="stylesheet" href="/stylesheets/profile.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">MyPinterest</h1>
+      <div class="profile-controls">
+        
+        <a href="/posts" class="button">Post</a>
+        <a href="/feed" class="button">Feed</a>
+        <a href="/logout" class="logout-btn">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="profile-card">
+    <img src="https://imgs.search.brave.com/sLaLOebtdyWHHS_k_4RFHYR_suP3R-BvIoOr5bHiJ8g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA5LzEzLzI3Lzgx/LzM2MF9GXzkxMzI3/ODE0OV93MVVRRmFh/d0t2enZDM09CNXY2/QVYzUUlpUDV1cUE4/VC5qcGc" alt="Profile" class="profile-img" />
+    <h2 class="username">@<%= user.username %></h2>
+    <p><%= user.fullName  %></p>
+
+  </section>
+
+  <section class="masonry">
+    <% user.posts.forEach(function(post) { %>
+  <div class="card">
+    <img src="/images/uploads/<%= post.image %>" alt="Post Image">
+    <p class="caption"><%= post.imageText %></p>
+  </div>
+<% }) %>
+  </section>
+
+</body>
+</html>
+

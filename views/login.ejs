@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+    <link rel='stylesheet' href='/stylesheets/login.css' />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <!--pinterest logo-->
+        <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo" class="img1" />
+        <p class="header"><span>Log in </span> to your creative space</p>
+       
+        <% if(error.length>0){  %>
+          <p class="error"> <%= error %> </p>
+
+        <% } %>
+       
+        <form action="/login" method="post">
+       
+        <input name='username' type="text" placeholder="username" class="detail" /> <br/>
+        <input name="password" type="password" placeholder="Password" class="detail" />
+        <input type="submit" class="btn int" value="Login My Account">
+        </form>
+       
+        
+
+        <a href="/">Not in Pinterest yet ? Sign Up</a>
+
+        
+
+  </body>
+</html>
