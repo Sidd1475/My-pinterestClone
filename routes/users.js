@@ -1,8 +1,17 @@
+
+require('dotenv').config();
+
 const mongoose = require('mongoose');
 const plm = require("passport-local-mongoose")
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/mypinterest");
+console.log('DEBUG URI =', process.env.MONGO_URI);
+
+
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
